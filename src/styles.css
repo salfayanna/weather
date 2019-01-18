@@ -1,13 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-html{font-family: 'Lato', sans-serif;}
-
-html{
+html{font-family: 'Lato', sans-serif;
   background-color: #FAFBFC;
+  color: rgb(42, 42, 98);
 }
-
-html{
-  color: midnightblue;
-} 
 
 body{
   display: flex;

@@ -1,56 +1,20 @@
-.tile{
-  background-color: white;
-  -webkit-box-shadow: 3px 4px 15px -1px rgba(0,0,0,0.33); 
-  box-shadow: 3px 4px 15px -1px rgba(0,0,0,0.33);
-}
-
-.tile{
+.mainSearch{
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px;
-}
-
-img{
-  width: 160px;
-  height: 160px;
-}
-
-.tile{
-  margin-bottom: 40px;
-  border-radius: 15px;
+  justify-content: center;
   width: 900px;
+}
+
+.search{
+  margin-bottom: 45px;
+  width: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 li {
   list-style-type: none;
-}
-
-.temp{
-  font-weight: bolder;
-  font-size: 60px;
-}
-
-.tempDiv, .cityDiv{
-  display: flex;
-  align-items: center;
-  height: 160px;
-}
-
-.cityDiv{
-  flex-direction: column;
-}
-
-
-
-.search{
-  margin-bottom: 45px;
-  height: 40px;
-  width: 900px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-left: 0;
 }
 
 input{
@@ -59,8 +23,26 @@ input{
 }
 
 button{
-  width: 90px;
-  height: 40px;
+  width: 160px;
+  height: 45px;
+  margin: 1px;
+}
+
+.tile{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  width: 900px;
+  -webkit-box-shadow: 3px 4px 15px -1px rgba(0,0,0,0.33); 
+  box-shadow: 3px 4px 15px -1px rgba(0,0,0,0.33);
+}
+
+.cityDiv{
+  flex-direction: column;
 }
 
 .cityName{
@@ -71,4 +53,19 @@ button{
 
 .country, .time{
   font-weight: bolder;
+}
+
+.tempDiv, .cityDiv{
+  display: flex;
+  align-items: center;
+}
+
+.temp{
+  font-weight: bolder;
+  font-size: 60px;
+}
+
+img{
+  width: 160px;
+  height: 160px;
 }

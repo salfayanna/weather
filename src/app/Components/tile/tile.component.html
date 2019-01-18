@@ -1,12 +1,14 @@
-<div class="search">
+<div class="mainSearch">
+  <div class="search">
     <input #searchBox id="search-box" (input)="searchBox.value" />
-  <button type="submit" (click) ="search(searchBox.value)" [disabled]="!searchBox.value">Search</button>
+    <button type="submit" (click)="search(searchBox.value)" [disabled]="!searchBox.value">Search</button>
+  </div>
 </div>
 
-<li *ngIf="weathers">
-  <div class="tile" *ngFor="let city of weathers.list">
+<li *ngIf="weathers" >
+  <div class="tile" *ngFor="let city of weathers.list" (click)="redirect()">
 
-    <div class="cityDiv">
+    <div class="cityDiv" >
       <p class="cityName">{{city.name}}</p>
       <p class="country">{{city.sys.country}}</p>
       <p class="time">{{city.dt * 1000 | date:'HH:mm'}}</p>

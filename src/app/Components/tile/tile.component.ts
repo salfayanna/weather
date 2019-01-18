@@ -1,20 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { forecasts } from '../../weather-list';
-import { City } from '../../cities';
 import { OpenWeatherMapService } from '../../Services/open-weather-map.service';
-import { Observable, of } from 'rxjs';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-tile',
   templateUrl: './tile.component.html',
-  styleUrls: ['./tile.component.css']
+  styleUrls: ['./tile.component.css'],
 })
 export class TileComponent implements OnInit {
 
-  // weathers: City[];
   weathers: Object;
 
-  constructor(private weatherMapService: OpenWeatherMapService) { }
+  constructor(private weatherMapService: OpenWeatherMapService, private router: Router) { }
 
   ngOnInit() {
     this.getWeather();
@@ -25,21 +22,26 @@ export class TileComponent implements OnInit {
     this.weatherMapService.getWeather()
       .subscribe(response => {
         this.weathers = response;
-        console.log(this.weathers);
+        console.log('s', this.weathers);
       });
   }
 
   search(city: string) {
-    const safetyCity: Object = this.weathers;
     this.weatherMapService.searchWeather(city)
     .subscribe(response => {
-      this.weathers = response;
-      if (this.weathers['list'].length === 0) {
+      if (response['list'].length === 0) {
         alert('City not found');
-        this.weathers = safetyCity;
-      }
-      console.log(this.weathers);
-    });
+      } else {
+        this.weathers = response;
 
+      }
+      console.log('search', this.weathers);
+    });
+  }
+
+  redirect() {
+    this.router.navigate(['./five-days']);
   }
 }
+
+// const id = +this.route.snapshot.paramMap.get('id');

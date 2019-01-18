@@ -1,9 +1,25 @@
-<div class="daily">
-  <div class="day">
-    <p></p>
-    <p></p>
-    <p></p>
-    <img src="" alt="">
-    <p></p>
+<div class="mainSearch">
+  <div class="search">
+    <input #searchBox id="search-box" (input)="searchBox.value" />
+    <button type="submit" (click)="getCityById(searchBox.value)" [disabled]="!searchBox.value">Search</button>
   </div>
+</div>
+
+<div class="allWeather" *ngIf="cityList">
+  <p>{{cityList.city.name}}</p>
+  <p>{{cityList.city.country}}</p>
+  <li>
+    <div class="daily">
+
+      <div *ngFor="let state of cityList.list; let i=index">
+        <div class="day" *ngIf="i<5">
+          <p>{{state.dt * 1000 | date:'HH:mm'}}</p>
+          <p>{{state.main.temp}} °C</p>
+          <img src="http://openweathermap.org/img/w/{{state.weather[0].icon}}.png">
+          <p>{{state.weather[0].description}}</p>
+        </div>
+      </div>
+
+    </div>
+  </li>
 </div>
