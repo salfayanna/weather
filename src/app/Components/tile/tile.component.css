@@ -1,0 +1,74 @@
+.tile{
+  background-color: white;
+  -webkit-box-shadow: 3px 4px 15px -1px rgba(0,0,0,0.33); 
+  box-shadow: 3px 4px 15px -1px rgba(0,0,0,0.33);
+}
+
+.tile{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+}
+
+img{
+  width: 160px;
+  height: 160px;
+}
+
+.tile{
+  margin-bottom: 40px;
+  border-radius: 15px;
+  width: 900px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.temp{
+  font-weight: bolder;
+  font-size: 60px;
+}
+
+.tempDiv, .cityDiv{
+  display: flex;
+  align-items: center;
+  height: 160px;
+}
+
+.cityDiv{
+  flex-direction: column;
+}
+
+
+
+.search{
+  margin-bottom: 45px;
+  height: 40px;
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input{
+  height: 40px;
+  width: 790px;
+}
+
+button{
+  width: 90px;
+  height: 40px;
+}
+
+.cityName{
+  font-weight: bolder;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.country, .time{
+  font-weight: bolder;
+}
